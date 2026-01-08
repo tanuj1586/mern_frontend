@@ -1,11 +1,10 @@
+"use client";
 
+import { useSearchParams } from "next/navigation";
 
-export default function VerifyEmailSuccess({
-  searchParams,
-}: {
-  searchParams: { message?: string };
-}) {
-  const message = searchParams.message || "No message provided";
+export default function VerifyEmailSuccess() {
+  const searchParams = useSearchParams();
+  const message = searchParams.get("message") || "No message provided";
 
   return (
     <div
